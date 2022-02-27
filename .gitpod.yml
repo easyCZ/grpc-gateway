@@ -11,3 +11,8 @@ tasks:
       bazel run :gazelle -- update-repos -from_file=go.mod -to_macro=repositories.bzl%go_repositories
       bazel run :gazelle 
       bazel run :buildifier
+
+vscode:
+  extensions:
+    - bazelbuild.vscode-bazel
+    - golang.Go
