@@ -18,3 +18,7 @@ plugins:
     out: .
     opt:
       - allow_repeated_fields_in_body=true
+  - name: openapiv3
+    out: .
+    opt:
+      - allow_repeated_fields_in_body=true
