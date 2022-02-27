@@ -5,5 +5,9 @@ image:
   file: .gitpod/gitpod.Dockerfile
 
 tasks:
-  - name: go
-    init: go mod download
+  - init: |
+      go mod download
+      make install && make clean && make generate
+      bazel run :gazelle -- update-repos -from_file=go.mod -to_macro=repositories.bzl%go_repositories
+      bazel run :gazelle 
+      bazel run :buildifier
